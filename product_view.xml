@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_product_form_inherit_saboor_id" model="ir.ui.view">
+            <field name="name">Saboor</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+               <xpath expr="//form/sheet/div/label[@for='name']" position="replace">
+                   <label class="oe_edit_only" for="name" string="Saboor Name"/>
+               </xpath>
+            </field>
+        </record>
+        
+         <record id="view_sale_form_inherit_saboor_id" model="ir.ui.view">
+            <field name="name">Saboor</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="sale.product_template_form_view_invoice_policy"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='invoice_policy']" position="after">
+                   <field name="vendor_name"/>
+                   <field name="customer_name" />
+                   <field name="country" />
+                   <field name="supplier" />
+                   <field name="brand" />
+               </xpath>
+            </field>
+        </record>
+        
+         <record id="view_purchase_form_inherit_saboor_id" model="ir.ui.view">
+            <field name="name">Saboor</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="purchase.view_product_supplier_inherit"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='purchase_method']" position="after">
+                   <field name="product_form"/>
+                   <field name="part"/>
+                   <field name="disassembly"/>
+                   <field name="serial_prefix"/>
+               </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
