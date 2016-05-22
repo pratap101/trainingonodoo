@@ -10,7 +10,7 @@ class SerialNumber(models.Model):
     payment_mode = fields.Selection([
                                 ('cash','Cash'),
                                 ('credit','Credit'),
-                                ('cheque','Cheque')], string='Payment Mode', required=True)
+                                ('cheque','Cheque')], string='Payment Mode', required=True, default='cash')
                                 
     
     
