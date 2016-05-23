@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
                <xpath expr="//form/sheet/div/label[@for='name']" position="replace">
-                   <label class="oe_edit_only" for="name" string="Saboor Name"/>
+                   <label class="oe_edit_only" for="name" string="Saboor Name" placeholder="Saboor Name"/>
                </xpath>
             </field>
         </record>
